@@ -9,15 +9,8 @@ class PostController extends Controller
 {
     public function index()
     {
-        // for updating
-//        $post = Post::find(1);
-//        $post->update([
-//            'title' => 'Titre édité'
-//        ]);
-//
-//        dd('édité');
 
-        $posts = Post::orderBy('title')->take(10)->get();
+        $posts = Post::all();
 
         return view('articles',[
             'posts' => $posts
